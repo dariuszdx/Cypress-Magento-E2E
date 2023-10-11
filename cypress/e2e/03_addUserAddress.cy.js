@@ -16,6 +16,7 @@ describe("E2E-Add new address", () => {
     context("User address", () => {
     it('Should successfully add new user address', () => {
         cy.addAddress();
+        cy.getBySelector(".message-success > div").should("exist")
     });
   });
 });
