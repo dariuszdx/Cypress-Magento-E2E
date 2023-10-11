@@ -3,6 +3,7 @@ import userData, {  } from '../page_objects/userData';
 import register from "../page_objects/register";
 import logOut from "../page_objects/logOut";
 import logIn from '../page_objects/logIn';
+import address from '../page_objects/address';
 
 Cypress.Commands.add('getByData', (dataTestAttribute) => {
   return cy.get(`[data-test="${dataTestAttribute}"]`);
@@ -35,3 +36,18 @@ Cypress.Commands.add('userLogIn',() => {
   logIn.signInButton.click();
 
 })
+Cypress.Commands.add('addAddress',() => {
+  logOut.list.click({ force: true });
+  address.myAccount.click({ force: true });
+  address.addressBookTab.click();
+  address.companyField.clear().type(Cypress.env('company'));
+  address.phoneField.clear().type(Cypress.env('phoneNumber'));
+  address.streetAddressField.clear().type(Cypress.env('street'));
+  address.cityField.clear().type(Cypress.env('city'));
+  address.countryField.invoke('val', '').select(Cypress.env('country'));
+  address.stateField.invoke('val', '').select(Cypress.env('state'));
+  address.streetAddressField.clear().type(Cypress.env('street'));
+  address.zipCodeField.clear().type(Cypress.env('zipCode'));
+  address.saveAddressButton.click();
+})
+

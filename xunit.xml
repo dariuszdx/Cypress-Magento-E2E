@@ -1,0 +1,3 @@
+<testsuite name="Mocha Tests" tests="1" failures="0" errors="0" skipped="0" timestamp="Wed, 11 Oct 2023 03:28:23 GMT" time="16.923">
+<testcase classname="E2E-Add new address User address" name="Should successfully add new user address" time="15.542"/>
+</testsuite>
