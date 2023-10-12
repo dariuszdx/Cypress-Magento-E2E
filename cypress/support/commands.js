@@ -4,6 +4,7 @@ import register from "../page_objects/register";
 import logOut from "../page_objects/logOut";
 import logIn from '../page_objects/logIn';
 import address from '../page_objects/address';
+import search from '../page_objects/search';
 
 Cypress.Commands.add('getByData', (dataTestAttribute) => {
   return cy.get(`[data-test="${dataTestAttribute}"]`);
@@ -49,5 +50,10 @@ Cypress.Commands.add('addAddress',() => {
   address.streetAddressField.clear().type(Cypress.env('street'));
   address.zipCodeField.clear().type(Cypress.env('zipCode'));
   address.saveAddressButton.click();
+})
+Cypress.Commands.add('search', () => { 
+  search.search.clear().type(Cypress.env('product'));
+  search.loop.click();
+
 })
 
