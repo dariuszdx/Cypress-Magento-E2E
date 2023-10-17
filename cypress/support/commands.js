@@ -61,6 +61,7 @@ Cypress.Commands.add('search', () => {
 Cypress.Commands.add('filterByColour', () => { 
   filter.mensCategoryTab.click();
   filter.mensCategoryTops.click();
+  cy.wait(3000);
   filter.filterByColour.click();
   filter.redColour.click();
 })
