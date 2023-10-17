@@ -1,3 +1,10 @@
-<testsuite name="Mocha Tests" tests="1" failures="0" errors="0" skipped="0" timestamp="Wed, 11 Oct 2023 03:28:23 GMT" time="16.923">
-<testcase classname="E2E-Add new address User address" name="Should successfully add new user address" time="15.542"/>
+<testsuite name="Mocha Tests" tests="1" failures="0" errors="1" skipped="0" timestamp="Tue, 17 Oct 2023 03:10:22 GMT" time="21.678">
+<testcase classname="E2E-Filter product by price" name="Should successfully filter product by the colour" time="0"><failure>Timed out retrying after 4000ms: expected &#x27;&#x3C;div.swatch-option.color.&#x3E;&#x27; to be &#x27;visible&#x27;
+
+This element &#x60;&#x3C;div.swatch-option.color.&#x3E;&#x60; is not visible because its parent &#x60;&#x3C;div.filter-options-content&#x3E;&#x60; has CSS property: &#x60;display: none&#x60;
+AssertionError: Timed out retrying after 4000ms: expected &#x27;&#x3C;div.swatch-option.color.&#x3E;&#x27; to be &#x27;visible&#x27;
+
+This element &#x60;&#x3C;div.swatch-option.color.&#x3E;&#x60; is not visible because its parent &#x60;&#x3C;div.filter-options-content&#x3E;&#x60; has CSS property: &#x60;display: none&#x60;
+    at get redColour [as redColour] (webpack://cypress-magento-e2e/./cypress/page_objects/filter.js:13:120)
+    at Context.eval (webpack://cypress-magento-e2e/./cypress/support/commands.js:65:9)</failure></testcase>
 </testsuite>

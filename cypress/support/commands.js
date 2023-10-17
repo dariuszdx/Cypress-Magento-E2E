@@ -5,6 +5,7 @@ import logOut from "../page_objects/logOut";
 import logIn from '../page_objects/logIn';
 import address from '../page_objects/address';
 import search from '../page_objects/search';
+import filter from '../page_objects/filter';
 
 Cypress.Commands.add('getByData', (dataTestAttribute) => {
   return cy.get(`[data-test="${dataTestAttribute}"]`);
@@ -26,7 +27,7 @@ Cypress.Commands.add('getBySelector', (selector) => {
 });
 
 Cypress.Commands.add('userLogOut',() => {
-  logOut.list.click({ force: true });
+  logOut.list.click();
   logOut.signOut.click({ force: true });
 })
 
@@ -35,6 +36,7 @@ Cypress.Commands.add('userLogIn',() => {
   logIn.email.type(Cypress.env('email'));
   logIn.password.type(Cypress.env('password'));
   logIn.signInButton.click();
+
 
 })
 Cypress.Commands.add('addAddress',() => {
@@ -56,4 +58,11 @@ Cypress.Commands.add('search', () => {
   search.loop.click();
 
 })
+Cypress.Commands.add('filterByColour', () => { 
+  filter.mensCategoryTab.click();
+  filter.mensCategoryTops.click();
+  filter.filterByColour.click();
+  filter.redColour.click();
+})
+
 

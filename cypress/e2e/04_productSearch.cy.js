@@ -2,7 +2,7 @@
 
 import '../support/commands'; 
 
-describe("E2E-Loggin and logout as a existing user", () => {
+describe("E2E-Search product by name", () => {
     before(() => {
       cy.visit("/");
     });
