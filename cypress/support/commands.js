@@ -6,6 +6,9 @@ import logIn from '../page_objects/logIn';
 import address from '../page_objects/address';
 import search from '../page_objects/search';
 import filter from '../page_objects/filter';
+import basket from '../page_objects/basket';
+import checkout from '../page_objects/checkout';
+import basketUpdate from '../page_objects/basketUpdate';
 
 Cypress.Commands.add('getByData', (dataTestAttribute) => {
   return cy.get(`[data-test="${dataTestAttribute}"]`);
@@ -64,6 +67,33 @@ Cypress.Commands.add('filterByColour', () => {
   cy.wait(3000);
   filter.filterByColour.click();
   filter.redColour.click();
+})
+Cypress.Commands.add('basket', () => { 
+  basket.redTshirt.click();
+  basket.sizeM.click();
+  cy.wait(3000);
+  basket.redColour.click();
+  basket.qtyField.clear().type(1)
+  basket.addProductButton.click();
+})
+Cypress.Commands.add('update', () => { 
+  basketUpdate.basket.click();
+  //basketUpdate.viewBasket.click();
+  basketUpdate.qtyBasketField.clear().type(1)
+  basketUpdate.updateBasket.click();
+  cy.wait(3000)
+})
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Returning false here prevents Cypress from failing the test
+  return false;
+});
+Cypress.Commands.add('checkout', () => { 
+  checkout.proccedToCheckOutButton.click();
+  cy.wait(5000)
+  checkout.nextButton.click();
+  cy.wait(5000)
+  checkout.placeOrderButton.click();
+  
 })
 
 
