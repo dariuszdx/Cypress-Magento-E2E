@@ -1,4 +1,6 @@
-<testsuite name="Mocha Tests" tests="2" failures="0" errors="0" skipped="0" timestamp="Wed, 18 Oct 2023 17:46:13 GMT" time="60.218">
-<testcase classname="E2E-Update quantity of product in basket Filter product and add to basket" name="Should successfully filter the product by color and add it to cart" time="22.204"/>
-<testcase classname="E2E-Update quantity of product in basket Basket update" name="Should update the number of products in cart and proceed to checkout" time="30.039"/>
+<testsuite name="Mocha Tests" tests="4" failures="0" errors="0" skipped="0" timestamp="Thu, 19 Oct 2023 16:42:49 GMT" time="83.155">
+<testcase classname="E2E-Checkout flow test Product search" name="Should successfully find product on website" time="6.117"/>
+<testcase classname="E2E-Checkout flow test Product filter" name="Should successfully filter product by the colour" time="13.777"/>
+<testcase classname="E2E-Checkout flow test Filter product and add to basket" name="Should successfully filter the product by color and add it to cart" time="20.759"/>
+<testcase classname="E2E-Checkout flow test Basket update and procced to checkout" name="Should update the number of products in cart and proceed to checkout" time="27.817"/>
 </testsuite>

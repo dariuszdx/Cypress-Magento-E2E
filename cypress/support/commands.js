@@ -58,7 +58,7 @@ Cypress.Commands.add('addAddress',() => {
 })
 Cypress.Commands.add('search', () => { 
   search.search.clear().type(Cypress.env('product'));
-  search.loop.click();
+  search.loop.click({force: true});
 
 })
 Cypress.Commands.add('filterByColour', () => { 

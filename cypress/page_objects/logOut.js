@@ -1,7 +1,7 @@
 
 class logOut {
     get list() {
-        return cy.get(':nth-child(2) > .customer-welcome > .customer-name > .action');
+        return cy.get(':nth-child(2) > .customer-welcome > .customer-name > .action').should("exist");
     }
     
     get signOut() {

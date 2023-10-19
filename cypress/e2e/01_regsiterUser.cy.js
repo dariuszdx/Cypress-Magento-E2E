@@ -3,10 +3,8 @@
 import '../../cypress/support/commands'; 
 
 describe("E2E-Register a new user", () => {
-    before(() => {
-      cy.visit("/");
-    });
     beforeEach(() => {
+      cy.visit("/");
       cy.clearCookies();
     })
     afterEach(() => {

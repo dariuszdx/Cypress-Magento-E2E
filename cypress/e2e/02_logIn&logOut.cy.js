@@ -3,10 +3,8 @@
 import '../support/commands'; 
 
 describe("E2E-Loggin and logout as a existing user", () => {
-    before(() => {
-      cy.visit("/");
-    });
     beforeEach(() => {
+      cy.visit("/");
       cy.clearCookies();
       cy.userLogIn();
     })
