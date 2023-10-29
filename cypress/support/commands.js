@@ -1,6 +1,6 @@
 
-import userData, {  } from '../page_objects/userData';
-import register from "../page_objects/register";
+import userData, {  } from '../page_objects/registerData';
+import register from "../page_objects/registerButtons";
 import logOut from "../page_objects/logOut";
 import logIn from '../page_objects/logIn';
 import address from '../page_objects/address';
@@ -10,9 +10,50 @@ import basket from '../page_objects/basket';
 import checkout from '../page_objects/checkout';
 import basketUpdate from '../page_objects/basketUpdate';
 
-Cypress.Commands.add('getByData', (dataTestAttribute) => {
+Cypress.Commands.add('getElementByData', (dataTestAttribute) => {
   return cy.get(`[data-test="${dataTestAttribute}"]`);
 });
+Cypress.Commands.add('clickSignInButton', () => {
+  cy.get('.panel > .header > .authorization-link > a');
+});
+Cypress.Commands.add('getElementById', (Id) => {
+  cy.get(`#${Id}`);
+});
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Returning false here prevents Cypress from failing the test
+  return false;
+});
+Cypress.Commands.add('getButtonByLabel', (label) => {
+  cy.get('.login-container').find('span').contains(label);
+});
+Cypress.Commands.add('getElementWithClassBase', () => {
+  cy.get('.base');
+});
+Cypress.Commands.add("clickButtonByTitle", (title) => {
+  cy.get("button[title='" + title + "']");
+});
+Cypress.Commands.add("getElementByDiv", () => {
+  cy.get("div");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Cypress.Commands.add('registerUser', () => {
   register.signIn.click();
@@ -83,10 +124,7 @@ Cypress.Commands.add('update', () => {
   basketUpdate.updateBasket.click();
   cy.wait(3000)
 })
-Cypress.on('uncaught:exception', (err, runnable) => {
-  // Returning false here prevents Cypress from failing the test
-  return false;
-});
+
 Cypress.Commands.add('checkout', () => { 
   checkout.proccedToCheckOutButton.click();
   cy.wait(5000)
@@ -95,5 +133,7 @@ Cypress.Commands.add('checkout', () => {
   checkout.placeOrderButton.click();
   
 })
+
+
 
 

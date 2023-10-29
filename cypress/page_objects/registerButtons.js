@@ -1,14 +1,14 @@
 
-class register {
+class registerButtons {
     get signIn() {
-        return cy.get('.panel > .header > .authorization-link > a')
+        return cy.clickSignInButton();
     }
     get createAccount() {
-        return cy.get('.login-container > .block-new-customer > .block-content > .actions-toolbar > div.primary > .action > span')
+        return cy.getButtonByLabel('Create an Account');
     }
 
     get creatAnAccountBtn() {
-        return cy.get('#form-validate > .actions-toolbar > div.primary > .action > span')
+        return cy.clickButtonByTitle('Create an Account')
     }    
     get myAccountButton() {
         return cy.get(':nth-child(2) > .customer-welcome > .customer-menu > .header > :nth-child(1) > a').should('be.visible');
@@ -18,4 +18,4 @@ class register {
         return cy.get('.block-title > .action > span')
     }
 }
-export default new register ();
+export default new registerButtons ();
