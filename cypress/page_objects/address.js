@@ -1,30 +1,36 @@
 
 class address {
+    get firstname() {
+        return cy.getElementById('firstname')
+    }
+    get lastname() {
+        return cy.getElementById('lastname')
+    }
     get companyField() {
-        return cy.get('#company');
+        return cy.getElementById('company');
     }
 
     get streetAddressField() {
-        return cy.get('#street_1');
+        return cy.getElementById('street_1');
     }
 
     get cityField() {
-        return cy.get('#city');
+        return cy.getElementById('city');
     }
 
     get stateField() {
-        return cy.get('#region_id');
+        return cy.getElementById('region_id');
     }
 
     get zipCodeField() {
-        return cy.get('#zip');
+        return cy.getElementById('zip');
     }
 
     get countryField() {
-        return cy.get('#country');
+        return cy.getElementById('country');
     }
     get phoneField() {
-        return cy.get('#telephone');
+        return cy.getElementById('telephone');
     }
     get next() {
         return cy.get('.button > span');
@@ -43,13 +49,13 @@ class address {
     }
     
     get saveAddressButton() {
-        return cy.get('#form-validate > .actions-toolbar > div.primary > .action > span');
+        return cy.clickButtonByTitle('Save Address');
     }
     get myAccount(){
         return cy.get(':nth-child(2) > .customer-welcome > .customer-menu > .header > :nth-child(1) > a');
     }
     get addressBookTab(){
-        return cy.get('.items > :nth-child(6) > a')
+        return cy.getNthChildLinkInItems(6)
     }
     clickOnSaveAddresButton() {
         this.saveAddressButton.click();

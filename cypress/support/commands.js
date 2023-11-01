@@ -35,6 +35,18 @@ Cypress.Commands.add("clickButtonByTitle", (title) => {
 Cypress.Commands.add("getElementByDiv", () => {
   cy.get("div");
 });
+Cypress.Commands.add('getNthChildCustomerAction', (index) => {
+  cy.get('.customer-welcome > .customer-name > .action').eq(index - 1)
+}) 
+Cypress.Commands.add('getNthChildCustomerMenuLink', (index) => {
+  cy.get('.customer-welcome > .customer-menu > .header > .authorization-link > a').eq(index - 1)
+    
+});
+Cypress.Commands.add('getNthChildLinkInItems', (nthChild) => {
+  return cy.get('.items').find(`:nth-child(${nthChild}) > a`);
+});
+
+
 
 
 
