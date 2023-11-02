@@ -1,9 +1,9 @@
 class search {
     
-    get search(){
-        return cy.get('#search');
+    get searchField(){
+        return cy.getElementById('search');
     }
-    get loop () {
+    get loopButton () {
         return cy.get('.actions>.action');
     }
 }

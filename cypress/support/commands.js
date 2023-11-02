@@ -45,6 +45,11 @@ Cypress.Commands.add('getNthChildCustomerMenuLink', (index) => {
 Cypress.Commands.add('getNthChildLinkInItems', (nthChild) => {
   return cy.get('.items').find(`:nth-child(${nthChild}) > a`);
 });
+Cypress.Commands.add('verifySearchElement', (product) => {
+  cy.get('.column > .search').should('exist').should('contain', product);
+});
+
+
 
 
 
