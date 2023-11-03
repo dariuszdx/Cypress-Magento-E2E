@@ -5,7 +5,7 @@ import logOut from "../page_objects/logOut";
 import logIn from '../page_objects/logIn';
 import address from '../page_objects/address';
 import search from '../page_objects/search';
-import filter from '../page_objects/filter';
+import filter from '../page_objects/category';
 import basket from '../page_objects/basket';
 import checkout from '../page_objects/checkout';
 import basketUpdate from '../page_objects/basketUpdate';

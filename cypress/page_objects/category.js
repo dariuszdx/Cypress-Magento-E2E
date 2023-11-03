@@ -1,7 +1,7 @@
-class filter {
+class category {
     
     get mensCategoryTab() {
-        return cy.get("#ui-id-5 > :nth-child(2)");
+        return cy.get('a#ui-id-5');
     }
     get mensCategoryTops(){
         return cy.get("dd > .items > :nth-child(1) > a");
@@ -14,4 +14,4 @@ class filter {
 
     }
 }
-export default new filter();
+export default new category();

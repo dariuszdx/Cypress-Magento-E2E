@@ -26,7 +26,7 @@ describe("E2E-Search product by name", { testIsolation: false }, () => {
         it('Should click on loop button and confirm that the product has been displayed', () => { 
             search.loopButton.click();
             cy.verifySearchElement("jacket")
-            //cy.location('pathname').should('eq', '/catalogsearch/result/?q=Jacket');
+            cy.location('pathname').should('eq', '/catalogsearch/result/');
         });
     });
 });
