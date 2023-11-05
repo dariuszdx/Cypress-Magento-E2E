@@ -3,7 +3,7 @@
 import category, { filter } from '../page_objects/category';
 import '../support/commands';
 
-describe("E2E-Filter product by price", { testIsolation: false }, () => {
+describe("E2E-Filter product by colour", { testIsolation: false }, () => {
   before(() => {
     cy.visit("/");
     cy.clearCookies();
@@ -12,7 +12,7 @@ describe("E2E-Filter product by price", { testIsolation: false }, () => {
   after(() => {
     cy.userLogOut();
   });
-  context("Product filter", () => {
+  context("Product filter by red colur", () => {
     it('User should open mens category tab', () => {
       category.mensCategoryTab.click();
       cy.getElementWithClassBase().should('exist').and('contain', 'Men');
