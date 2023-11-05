@@ -3,7 +3,7 @@
 import category, { filter } from '../page_objects/category';
 import '../support/commands';
 
-describe("E2E-Filter product by price", () => {
+describe("E2E-Filter product by price", { testIsolation: false }, () => {
   before(() => {
     cy.visit("/");
     cy.clearCookies();
@@ -15,6 +15,20 @@ describe("E2E-Filter product by price", () => {
   context("Product filter", () => {
     it('User should open mens category tab', () => {
       category.mensCategoryTab.click();
+      cy.getElementWithClassBase().should('exist').and('contain', 'Men');
+      cy.location('pathname').should('eq', '/men.html');
+    })
+    it('User should open mens tops category tab', () => {
+      category.mensCategoryTops.click();
+      cy.getElementWithClassBase().should('exist').and('contain', 'Tops');
+      cy.location('pathname').should('eq', '/men/tops-men.html');
+    })
+    it('User should filter mens tops by red colour', () => {
+      category.filterByColour.click();
+      category.redColour.should('be.visible').click();
+      cy.getElementWithClassBase().should('exist').and('contain', 'Tops');
+      cy.location('pathname').should('eq', '/men/tops-men.html');
+      cy.getFilterStatus().should('exist').and('contain', 'Red');
     })
   });
 });

@@ -7,10 +7,10 @@ class category {
         return cy.get("dd > .items > :nth-child(1) > a");
     }
     get filterByColour(){
-        return cy.get(":nth-child(5) > .filter-options-title").should("be.visible");
+        return cy.clickElementByNthChild("5");
     }
     get redColour(){
-        return cy.get('a[href="https://magento.softwaretestingboard.com/men/tops-men.html?color=58"] > .swatch-option').should("be.visible");
+        return cy.get('div.swatch-option.color[option-id="58"][option-label="Red"]');
 
     }
 }

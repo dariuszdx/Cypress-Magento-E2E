@@ -48,6 +48,20 @@ Cypress.Commands.add('getNthChildLinkInItems', (nthChild) => {
 Cypress.Commands.add('verifySearchElement', (product) => {
   cy.get('.column > .search').should('exist').should('contain', product);
 });
+Cypress.Commands.add('clickElementByText', (text) => {
+  cy.contains(text).click();
+});
+Cypress.Commands.add('clickElementByNthChild', (nth) => {
+  cy.get(`:nth-child(${nth}) > .filter-options-title`);
+});
+Cypress.Commands.add('selectColor', (color) => {
+  cy.get('.active > .filter-options-content')
+    .contains(color);
+});
+Cypress.Commands.add('getFilterStatus',() => {
+  cy.get(".filter-current > .items > .item")
+})
+
 
 
 
