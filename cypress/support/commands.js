@@ -61,6 +61,9 @@ Cypress.Commands.add('selectColor', (color) => {
 Cypress.Commands.add('getFilterStatus',() => {
   cy.get(".filter-current > .items > .item")
 })
+Cypress.Commands.add('getProductsTable',() => {
+  cy.get(".filter-current > .items > .item")
+})
 
 
 

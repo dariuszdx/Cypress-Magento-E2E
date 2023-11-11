@@ -25,10 +25,11 @@ describe("E2E-Filter product by colour", { testIsolation: false }, () => {
     })
     it('User should filter mens tops by red colour', () => {
       category.filterByColour.click();
-      category.redColour.should('be.visible').click();
+      category.redColour.click();
       cy.getElementWithClassBase().should('exist').and('contain', 'Tops');
       cy.location('pathname').should('eq', '/men/tops-men.html');
       cy.getFilterStatus().should('exist').and('contain', 'Red');
+      cy.getProductsTable().should('exist').and('contain', 'Red');
     })
   });
 });

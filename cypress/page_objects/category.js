@@ -10,8 +10,7 @@ class category {
         return cy.clickElementByNthChild("5");
     }
     get redColour(){
-        return cy.get('div.swatch-option.color[option-id="58"][option-label="Red"]');
-
+        return cy.get('[href="https://magento.softwaretestingboard.com/men/tops-men.html?color=58"] > .swatch-option');
     }
 }
 export default new category();
