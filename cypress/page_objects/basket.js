@@ -1,8 +1,5 @@
 class basket {
     
-   get redTshirt(){
-    return cy.get(":nth-child(5) > .product-item-info > .photo > .product-image-container > .product-image-wrapper > .product-image-photo")
-   }
    get sizeM(){
     return cy.get("#option-label-size-143-item-168")
    }
@@ -13,13 +10,13 @@ class basket {
     return cy.get("#qty")
    }
    get addProductButton(){
-    return cy.get("#product-addtocart-button > span")
+    return cy.clickButtonByTitle("Add to Cart")
    }
    get basket(){
     return cy.get(".showcart")
    }
    get viewBasket(){
-    return cy.get(":nth-child(7) > .secondary > .action > span")
+    return cy.get(":nth-child(7) > .secondary > .action > span").should("be.visible")
    }
    get qtyBasketField(){
     return cy.get("#cart-392274-qty")
@@ -29,6 +26,18 @@ class basket {
    }
    get proccedToCheckOutButton(){
     return cy.get(".checkout-methods-items > :nth-child(1) > .action > span")
+   }
+   get colorAttribute(){
+      return cy.get(".swatch-attribute.color > .swatch-attribute-selected-option")
+   }
+   get basketInfo(){
+      return cy.get(".item-info > .item")
+   }
+   get deleteBasket(){
+      return cy.get(".action-delete")
+   }
+   get emptyBasket(){
+      return cy.get(".cart-empty > :nth-child(1)")
    }
 }
 export default new basket();

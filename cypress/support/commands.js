@@ -64,6 +64,12 @@ Cypress.Commands.add('getFilterStatus',() => {
 Cypress.Commands.add('getProductsTable',() => {
   cy.get(".filter-current > .items > .item")
 })
+Cypress.Commands.add('getNthChildProductLink', (nth) => {
+  return cy.get(`:nth-child(${nth}) > .product-item-info > .details > .name > .product-item-link`);
+});
+Cypress.Commands.add('findProductByName', (name) => {
+  return cy.contains('.product-item-link', name);
+});
 
 
 
