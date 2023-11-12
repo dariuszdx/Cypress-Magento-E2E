@@ -70,6 +70,9 @@ Cypress.Commands.add('getNthChildProductLink', (nth) => {
 Cypress.Commands.add('findProductByName', (name) => {
   return cy.contains('.product-item-link', name);
 });
+Cypress.Commands.add('getChangeQtyOfProductField', (qty) => {
+  return cy.get('input[name^="cart["][name$="][qty]"]').clear().type(qty)
+});
 
 
 

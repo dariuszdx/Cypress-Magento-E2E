@@ -9,5 +9,8 @@ class checkout {
     get placeOrderButton(){
         return cy.get(".payment-method-content > :nth-child(4) > div.primary > .action")
     }
+    get shippingAddres(){
+        return cy.get(".shipping-address-item")
+    }
  }
  export default new checkout();

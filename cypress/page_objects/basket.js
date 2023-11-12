@@ -39,5 +39,8 @@ class basket {
    get emptyBasket(){
       return cy.get(".cart-empty > :nth-child(1)")
    }
+   get qtyProductField(){
+      return cy.get('input[name^="cart["][name$="][qty]"]')
+   }
 }
 export default new basket();

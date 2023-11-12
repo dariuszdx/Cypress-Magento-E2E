@@ -1,6 +1,13 @@
-<testsuite name="Mocha Tests" tests="4" failures="0" errors="0" skipped="0" timestamp="Thu, 19 Oct 2023 16:42:49 GMT" time="83.155">
-<testcase classname="E2E-Checkout flow test Product search" name="Should successfully find product on website" time="6.117"/>
-<testcase classname="E2E-Checkout flow test Product filter" name="Should successfully filter product by the colour" time="13.777"/>
-<testcase classname="E2E-Checkout flow test Filter product and add to basket" name="Should successfully filter the product by color and add it to cart" time="20.759"/>
-<testcase classname="E2E-Checkout flow test Basket update and procced to checkout" name="Should update the number of products in cart and proceed to checkout" time="27.817"/>
+<testsuite name="Mocha Tests" tests="4" failures="0" errors="3" skipped="0" timestamp="Sun, 12 Nov 2023 07:41:14 GMT" time="56.104">
+<testcase classname="E2E-Checkout flow test Product search" name="Should successfully find product on website" time="0"><failure>Cannot read properties of undefined (reading &#x27;clear&#x27;)
+TypeError: Cannot read properties of undefined (reading &#x27;clear&#x27;)
+    at Context.eval (webpack://cypress-magento-e2e/./cypress/support/commands.js:144:16)</failure></testcase>
+<testcase classname="E2E-Checkout flow test Product filter" name="Should successfully filter product by the colour" time="15.946"/>
+<testcase classname="E2E-Checkout flow test Filter product and add to basket" name="Should successfully filter the product by color and add it to cart" time="0"><failure>Cannot read properties of undefined (reading &#x27;click&#x27;)
+TypeError: Cannot read properties of undefined (reading &#x27;click&#x27;)
+    at Context.eval (webpack://cypress-magento-e2e/./cypress/support/commands.js:156:19)</failure></testcase>
+<testcase classname="E2E-Checkout flow test Basket update and procced to checkout" name="Should update the number of products in cart and proceed to checkout" time="0"><failure>Timed out retrying after 4000ms: Expected to find element: &#x60;input[title=&#x22;Qty&#x22;]&#x60;, but never found it.
+AssertionError: Timed out retrying after 4000ms: Expected to find element: &#x60;input[title=&#x22;Qty&#x22;]&#x60;, but never found it.
+    at get qtyBasketField [as qtyBasketField] (webpack://cypress-magento-e2e/./cypress/page_objects/basketUpdate.js:10:15)
+    at Context.eval (webpack://cypress-magento-e2e/./cypress/support/commands.js:166:15)</failure></testcase>
 </testsuite>
