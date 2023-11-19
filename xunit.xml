@@ -1,8 +1,8 @@
-<testsuite name="Mocha Tests" tests="4" failures="0" errors="3" skipped="0" timestamp="Sun, 12 Nov 2023 07:41:14 GMT" time="56.104">
+<testsuite name="Mocha Tests" tests="4" failures="0" errors="3" skipped="0" timestamp="Sun, 19 Nov 2023 09:30:34 GMT" time="56.286">
 <testcase classname="E2E-Checkout flow test Product search" name="Should successfully find product on website" time="0"><failure>Cannot read properties of undefined (reading &#x27;clear&#x27;)
 TypeError: Cannot read properties of undefined (reading &#x27;clear&#x27;)
     at Context.eval (webpack://cypress-magento-e2e/./cypress/support/commands.js:144:16)</failure></testcase>
-<testcase classname="E2E-Checkout flow test Product filter" name="Should successfully filter product by the colour" time="15.946"/>
+<testcase classname="E2E-Checkout flow test Product filter" name="Should successfully filter product by the colour" time="14.22"/>
 <testcase classname="E2E-Checkout flow test Filter product and add to basket" name="Should successfully filter the product by color and add it to cart" time="0"><failure>Cannot read properties of undefined (reading &#x27;click&#x27;)
 TypeError: Cannot read properties of undefined (reading &#x27;click&#x27;)
     at Context.eval (webpack://cypress-magento-e2e/./cypress/support/commands.js:156:19)</failure></testcase>

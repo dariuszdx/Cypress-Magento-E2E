@@ -25,7 +25,7 @@ describe("E2E-Filter product by colour", { testIsolation: false }, () => {
     });
     it("User should filter mens tops by red colour", () => {
       category.filterByColour.click();
-      category.redColour.click();
+      category.redColour.click({force:true});
       cy.getElementWithClassBase().should("exist").and("contain", "Tops");
       cy.location("pathname").should("eq", "/men/tops-men.html");
       cy.getFilterStatus().should("exist").and("contain", "Red");

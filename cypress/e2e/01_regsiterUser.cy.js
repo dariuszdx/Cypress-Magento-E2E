@@ -9,7 +9,6 @@ describe("E2E-Register a new user", { testIsolation: false }, () => {
     cy.visit("/");
     cy.clearCookies();
   });
-
   after(() => {
     cy.userLogOut();
   });
