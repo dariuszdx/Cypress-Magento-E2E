@@ -73,6 +73,10 @@ Cypress.Commands.add('findProductByName', (name) => {
 Cypress.Commands.add('getChangeQtyOfProductField', (qty) => {
   return cy.get('input[name^="cart["][name$="][qty]"]').clear().type(qty)
 });
+Cypress.Commands.add("findNthChildGreetLoggedIn", () => {
+  cy.get(':nth-child(2) > .greet > .logged-in');
+});
+
 
 
 

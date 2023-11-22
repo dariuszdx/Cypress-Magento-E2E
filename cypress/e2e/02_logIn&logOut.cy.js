@@ -2,16 +2,20 @@
 
 import "../support/commands";
 
-describe("E2E-Loggin and logout as a existing user", () => {
+describe("E2E-Log in and log out as an existing user", () => {
   beforeEach(() => {
     cy.visit("/");
     cy.clearCookies();
     cy.userLogIn();
   });
+
   afterEach(() => {
     cy.userLogOut();
   });
-  context("User loggin and logout", () => {
-    it("Should successfully login as a new user and logout", () => {});
+
+  context("User log in and log out", () => {
+    it("Should successfully log in as an existing user and log out", () => {
+      cy.findNthChildGreetLoggedIn().should('exist').and('contain', 'Janusz Kowalski');
+    });
   });
 });

@@ -14,7 +14,7 @@ describe("E2E-Search product by name", { testIsolation: false }, () => {
     cy.userLogOut();
   });
 
-  context("Product search", () => {
+  context("Performing product search", () => {
     it("Should successfully type product name in search field", () => {
       search.searchField.clear().type(Cypress.env("product"));
     });

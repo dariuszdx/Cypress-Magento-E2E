@@ -10,27 +10,33 @@ describe("E2E-Add new address", { testIsolation: false }, () => {
     cy.clearCookies();
     cy.userLogIn();
   });
+
   after(() => {
     cy.userLogOut();
   });
 
-  context("User address", () => {
+  context("Navigating to the address book", () => {
     it("Should successfully go to my account page", () => {
       menuList.list.click({ force: true });
       address.myAccount.click({ force: true });
       cy.getElementWithClassBase().should("exist").and("contain", "My Account");
       cy.location("pathname").should("eq", "/customer/account/");
     });
-    it("Should successfully go to address bok tab", () => {
+
+    it("Should successfully go to the address book tab", () => {
       address.addressBookTab.click();
       cy.getElementWithClassBase()
         .should("exist")
         .and("contain", "Add New Address");
     });
+  });
+
+  context("Complete address fields", () => {
     it("Should complete fields in the contact information section", () => {
       address.companyField.clear().type(Cypress.env("company"));
       address.phoneField.clear().type(Cypress.env("phoneNumber"));
     });
+
     it("Should complete fields in the address section", () => {
       address.streetAddressField.clear().type(Cypress.env("street"));
       address.cityField.clear().type(Cypress.env("city"));
@@ -38,6 +44,7 @@ describe("E2E-Add new address", { testIsolation: false }, () => {
       address.countryField.invoke("val", "").select(Cypress.env("country"));
       address.stateField.invoke("val", "").select(Cypress.env("state"));
     });
+
     it("Should check if the fields contain the entered values", () => {
       address.firstname.should(
         "have.value",
@@ -76,7 +83,10 @@ describe("E2E-Add new address", { testIsolation: false }, () => {
         Cypress.env("expectedValues").state
       );
     });
-    it("Should click on save address button and confirm that address has been added", () => {
+  });
+
+  context("Adding address to the user account", () => {
+    it("Should click on the save address button and confirm that the address has been added", () => {
       address.saveAddressButton.click();
       cy.getElementByDiv("message-succes")
         .should("exist")
