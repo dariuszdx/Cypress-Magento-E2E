@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
 
-import "../../cypress/support/commands";
+import "../support/commands";
 import registerButtons from "../page_objects/registerButtons";
 import registerData from "../page_objects/registerData";
 
-describe("E2E-Register a new user", { testIsolation: false }, () => {
+describe("E2E-Correct register a new user", { testIsolation: false }, () => {
   before(() => {
     cy.visit("/");
     cy.clearCookies();
